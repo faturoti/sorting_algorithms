@@ -32,7 +32,6 @@ void counting_sort(int *array, size_t size)
 
 	for (i = 1; i <= n; i++)
 		buff[i] += buff[i - 1];
-
 	print_array(buff, (n + 1));
 	a = malloc(sizeof(int) * (size + 1));
 
@@ -46,10 +45,8 @@ void counting_sort(int *array, size_t size)
 		a[buff[array[i]] - 1] = array[i];
 		buff[array[i]] -= 1;
 	}
-
 	for (i = 0; i < (int)size; i++)
 		array[i] = a[i];
-
 	free(buff);
 	free(a);
 }
